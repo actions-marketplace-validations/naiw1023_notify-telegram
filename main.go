@@ -22,11 +22,13 @@ func main() {
 		token  = os.Getenv("INPUT_TOKEN")
 		chat   = os.Getenv("INPUT_CHAT")
 		status = os.Getenv("INPUT_STATUS")
+		message = os.Getenv("INPUT_MESSAGE")
 
 		// github env
 		workflow = os.Getenv("GITHUB_WORKFLOW")
 		repo     = os.Getenv("GITHUB_REPOSITORY")
 		commit   = os.Getenv("GITHUB_SHA")
+		
 	)
 
 	if token == "" {
@@ -42,8 +44,11 @@ func main() {
 	c := tbot.NewClient(token, http.DefaultClient, "https://api.telegram.org")
 
 	icon := icons[strings.ToLower(status)]
-	link := fmt.Sprintf("https://github.com/%s/commit/%s/checks", repo, commit)
-	msg := fmt.Sprintf(`%s*%s*: %s ([%s](%s))`, icon, status, repo, workflow, link)
+	// link := fmt.Sprintf("https://github.com/%s/commit/%s/checks", repo, commit)
+	link := fmt.Sprintf("https://github.com/%s/issues", repo, commit)
+	msg := fmt.Sprintf(`%s*%s*: %s ([%s](%s))`, icon, status, message, repo, link)
+	// msg := fmt.Sprintf(`%s*%s*: %s ([%s](%s))`, icon, status, repo, workflow, link)
+	// msg := fmt.Sprintf(`%s*%s*: %s ((%s))`, icon, message, status, repo, link)
 
 	_, err := c.SendMessage(chat, msg, tbot.OptParseModeMarkdown)
 	if err != nil {
