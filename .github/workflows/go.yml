@@ -19,10 +19,9 @@ jobs:
     - name: Build
       run: go build -v .
       
-    - uses: naiw1023/notify-telegram@master
+    - uses: yanzay/notify-telegram@master
       if: always()
       with:
         chat: ${{ secrets.chat }}
         token: ${{ secrets.token }}
         status: ${{ job.status }}
-        message: "custom message"
