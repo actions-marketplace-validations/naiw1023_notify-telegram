@@ -45,7 +45,7 @@ func main() {
 
 	icon := icons[strings.ToLower(status)]
 	// link := fmt.Sprintf("https://github.com/%s/commit/%s/checks", repo, commit)
-	link := fmt.Sprintf("https://github.com/%s/issues", repo, commit)
+	link := fmt.Sprintf("https://github.com/%s/issues", repo)
 	msg := fmt.Sprintf(`%s*%s*: %s ([%s](%s))`, icon, status, message, repo, link)
 	// msg := fmt.Sprintf(`%s*%s*: %s ([%s](%s))`, icon, status, repo, workflow, link)
 	// msg := fmt.Sprintf(`%s*%s*: %s ((%s))`, icon, message, status, repo, link)
