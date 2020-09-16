@@ -25,9 +25,9 @@ func main() {
 		message = os.Getenv("INPUT_MESSAGE")
 
 		// github env
-		workflow = os.Getenv("GITHUB_WORKFLOW")
+		//workflow = os.Getenv("GITHUB_WORKFLOW")
 		repo     = os.Getenv("GITHUB_REPOSITORY")
-		commit   = os.Getenv("GITHUB_SHA")
+		//commit   = os.Getenv("GITHUB_SHA")
 		
 	)
 
