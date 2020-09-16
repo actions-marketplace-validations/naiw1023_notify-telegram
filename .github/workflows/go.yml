@@ -19,7 +19,7 @@ jobs:
     - name: Build
       run: go build -v .
       
-    - uses: yanzay/notify-telegram@master
+    - uses: naiw1023/issue-notify-telegram@master
       if: always()
       with:
         chat: ${{ secrets.chat }}
