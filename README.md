@@ -15,7 +15,7 @@ Then add your bot token and user id (or channel name) to repository Secrets.
 Add following step to the end of your workflow:
 
 ```yaml
-    - uses: yanzay/notify-telegram@v0.1.0
+    - uses: naiw1023/notify-telegram@v0.1.0
       if: always()
       with:
         chat: ${{ secrets.chat }} # user id or channel name secret
