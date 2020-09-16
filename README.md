@@ -21,4 +21,5 @@ Add following step to the end of your workflow:
         chat: ${{ secrets.chat }} # user id or channel name secret
         token: ${{ secrets.token }} # token secret
         status: ${{ job.status }} # do not modify this line
+        message: "Custom Message"
 ```
